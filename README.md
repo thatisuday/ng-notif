@@ -1,4 +1,4 @@
-# ng-slick-notif
+# ng-notif : [preview](https://rawgit.com/thatisuday/ng-notif/master/demo/index.html)
 AngularJs slick notification service (Pure JavaScript)
 
 ![preview](http://i.imgur.com/lwi8DDe.png)
