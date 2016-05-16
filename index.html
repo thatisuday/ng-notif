@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ng-notif by thatisuday</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Ng-notif</h1>
+      <h2 class="project-tagline">AngularJs slick notification service</h2>
+      <a href="https://github.com/thatisuday/ng-notif" class="btn">View on GitHub</a>
+      <a href="https://github.com/thatisuday/ng-notif/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/thatisuday/ng-notif/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="ng-slick-notif" class="anchor" href="#ng-slick-notif" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ng-slick-notif</h1>
+
+<p>AngularJs slick notification service (Pure JavaScript)</p>
+
+<p><img src="http://i.imgur.com/lwi8DDe.png" alt="preview"></p>
+
+<p><img src="http://i.imgur.com/Q5f221P.png" alt="preview"></p>
+
+<hr>
+
+<h1>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h1>
+
+<h2>
+<a id="using-bower" class="anchor" href="#using-bower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using bower</h2>
+
+<pre><code>bower install ng-notif
+</code></pre>
+
+<h2>
+<a id="manual-install" class="anchor" href="#manual-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Manual install</h2>
+
+<p>Add <code>notif.js</code> and <code>notif.css</code> in <code>&lt;head&gt;&lt;/head&gt;</code> section of your page after you have included <code>angular.js</code>.</p>
+
+<hr>
+
+<h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h1>
+
+<h2>
+<a id="include-notif-module" class="anchor" href="#include-notif-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Include $notif module</h2>
+
+<p>Include <strong>thatisuday.notif</strong> module in your app.</p>
+
+<pre><code>var myApp = angular.module('myApp', ['thatisuday.notif']);
+</code></pre>
+
+<h2>
+<a id="global-notif-configuration" class="anchor" href="#global-notif-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Global <code>$notif</code> configuration</h2>
+
+<p>You can configure <code>$notif</code> options before apps start running using <code>$notifProvider</code>. This will provide default options accross your app.</p>
+
+<pre><code>var myApp = angular.module('myApp', ['thatisuday.notif']).config(function($notifProvider){
+    $notifProvider.setOptions({
+        width:300,
+        txtAlign:'center',
+        color:'#fff',
+        bgColor : '#000'
+    });
+});
+</code></pre>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>value</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msg</td>
+<td><em>Any string</em></td>
+<td>Sets default message to add in notification</td>
+</tr>
+<tr>
+<td>position</td>
+<td>
+<strong>'top'</strong>, 'bottom'</td>
+<td>Place notification at top or bottom of the page</td>
+</tr>
+<tr>
+<td>type</td>
+<td>
+<strong>'default'</strong>,'success','info','error','warning'</td>
+<td>Add different color effect</td>
+</tr>
+<tr>
+<td>screen</td>
+<td>
+<strong>'desktop'</strong>,'mobile'</td>
+<td>Change shape of notification based on device. Use 'mobile' for mobile phone as it will be responsive.</td>
+</tr>
+<tr>
+<td>width</td>
+<td><strong>500</strong></td>
+<td>Width of notification in pixels. This will be 100% in case of mobile screen by default.</td>
+</tr>
+<tr>
+<td>bgColor</td>
+<td>
+<strong>'#fff'</strong>, '#xxx'</td>
+<td>Background color of notification</td>
+</tr>
+<tr>
+<td>color</td>
+<td>
+<strong>'#333'</strong>, 'xxx'</td>
+<td>Font color of notification</td>
+</tr>
+<tr>
+<td>txtAlign</td>
+<td>
+<strong>'left'</strong>,'center','right'</td>
+<td>Text alignment of notification text</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>
+<strong>5000</strong>, 'xxxx'</td>
+<td>Time in milliseconds to autohide notification bar</td>
+</tr>
+<tr>
+<td>multiline</td>
+<td>
+<strong>false</strong>, true</td>
+<td>Allow multiple lines to be displayed in notification. If set to <code>false</code>, only single notification line will be shown.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="launch-notification" class="anchor" href="#launch-notification" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Launch notification</h2>
+
+<p>You must inject <strong>$notif</strong> service in your controller. Basic command to launch notif is <code>$notif(options);</code></p>
+
+<pre><code>myApp.controller('myCtrl', function($scope, $notif){
+    $notif({
+        msg:'This username has already been taken.',
+        width:500,
+        position:'top',
+        screen:'desktop',
+        txtAlign:'center',
+        type : 'error',
+        multiline : true
+    });
+});
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/thatisuday/ng-notif">Ng-notif</a> is maintained by <a href="https://github.com/thatisuday">thatisuday</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
