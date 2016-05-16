@@ -78,6 +78,10 @@
 /* Screen */
 #slick-notif.mobile{
 	border-radius: 100px!important;
+	margin:0!important;
+	width:auto!important;
+	left:20px!important;
+	right:20px!important;
 }
 
 /* Single line */

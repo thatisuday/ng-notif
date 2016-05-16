@@ -11,13 +11,13 @@
 		// Default operations
 		var defOps = {
 			msg : 'Please provide a message.',
-			position : "top",
+			position : 'top',
 			type : 'default',
 			screen : 'desktop',
 			width : 600,
 			bgColor : '#fff',
 			color : '#333',
-			txtAlign : "left",
+			txtAlign : 'left',
 			timeout : 5000,
 			multiline : false
 		};
