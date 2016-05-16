@@ -14,6 +14,8 @@
 	line-height : 16px;
     z-index:13000;
     cursor:pointer;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }
 
 /* Animate */
@@ -73,10 +75,15 @@
 	border-top:2px solid #2196F3;
 }
 
-
 /* Screen */
 #slick-notif.mobile{
 	border-radius: 100px!important;
+}
+
+/* Single line */
+#slick-notif.multiline{
+	white-space:normal;
+	text-overflow:initial;
 }
 
 

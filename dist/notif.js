@@ -18,7 +18,8 @@
 			bgColor : '#fff',
 			color : '#333',
 			txtAlign : "left",
-			timeout : 5000
+			timeout : 5000,
+			multiline : false
 		};
 		
 		//Current session timeout
@@ -99,6 +100,11 @@
 				newNotifElem.style.color = currOps.color;
 				newNotifElem.style.textAlign = currOps.txtAlign;
 				newNotifElem.style.opacity = 0;
+				
+				//Multiline
+				if(currOps.multiline){
+					newNotifElem.className = newNotifElem.className + ' multiline';
+				}
 				
 				//Append notif element
 				document.body.appendChild(newNotifElem);
