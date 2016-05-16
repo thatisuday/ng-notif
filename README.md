@@ -52,7 +52,7 @@ var myApp = angular.module('myApp', ['thatisuday.notif']).config(function($notif
 | multiline | **false**, true | Allow multiple lines to be displayed in notification. If set to `false`, only single notification line will be shown. |
 
 ## Launch notification
-You must inject '$notif' service in your controller. Basic command to launch notif is `$notif(options)`;
+You must inject **$notif** service in your controller. Basic command to launch notif is `$notif(options);`
 
 ```
 myApp.controller('myCtrl', function($scope, $notif){
