@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>css-sets</title>
+		<link href='semantic.css' rel='stylesheet' type='text/css'>
+		
+		<!-- AngularJS -->
+		<script src="angular.js"></script>
+		
+		<!-- Slick Notifications -->
+		<script src="../dist/notif.js"></script>
+		<link href='../dist/notif.css' rel='stylesheet' type='text/css'>
+		
+		<style>
+			body{
+				font-family:'Roboto', sans-serif !important;
+				width:100%;
+				background-color:#fff;
+				padding:50px 150px;
+				margin:0;
+				font-family:sans-serif;
+			}
+			
+			.ui.form{
+				margin:0 auto;
+				width:900px;
+			}
+		</style>
+	</head>
+	<body ng-controller="myCtrl">
+		<div class="ui form">
+			<div class="field" style="text-align:center;">
+				<button class="ui button" ng-click="launch();">Launch Notif</button>
+			</div>
+			
+			<div class="four fields">
+				<div class="field">
+					<label>msg</label>
+					<input type="text" ng-model="options.msg" />
+				</div>
+				
+				<div class="field">
+					<label>width (number)</label>
+					<input type="text" ng-model="options.width" />
+				</div>
+				
+				<div class="field">
+					<label>position [top|bottom]</label>
+					<input type="text" ng-model="options.position" />
+				</div>
+				
+				<div class="field">
+					<label>screen [desktop|mobile]</label>
+					<input type="text" ng-model="options.screen" />
+				</div>
+			</div>
+			
+			<div class="three fields">
+				<div class="field">
+					<label>txtAlign (left|center|right)</label>
+					<input type="text" ng-model="options.txtAlign" />
+				</div>
+				
+				<div class="field">
+					<label>type(default|info|success|warning|error)</label>
+					<input type="text" ng-model="options.type" />
+				</div>
+				
+				<div class="field">
+					<label>color [#hex color]</label>
+					<input type="text" ng-model="options.color" />
+				</div>
+			</div>
+			
+			<div class="three fields">
+				<div class="field">
+					<label>bgColor [#hex color]</label>
+					<input type="text" ng-model="options.bgColor" />
+				</div>
+				
+				<div class="field">
+					<label>timeout [milliseconds]</label>
+					<input type="text" ng-model="options.timeout" />
+				</div>
+			</div>
+		<div>
+		
+		<script>
+			var myApp = angular.module('myApp', ['thatisuday.notif']).config(function($notifProvider){
+				$notifProvider.setOptions({
+					width:300,
+					txtAlign:'center',
+					color:'#fff',
+					bgColor : '#000'
+				});
+			});
+			
+			
+			myApp.controller('myCtrl', function($scope, $notif, $timeout){
+				$timeout(function(){
+					$scope.options = {
+						msg:'This username has already been taken.',
+						width:500,
+						position:'top',
+						screen:'desktop',
+						txtAlign:'left',
+						type : 'success',
+						color:'#000',
+						bgColor : '#fff',
+						timeout : 3000
+					};
+				});
+				
+				
+				$scope.launch = function(){
+					$notif($scope.options);
+				}
+			});
+		</script>
+	</body>
+</html>

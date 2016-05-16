@@ -1,0 +1,82 @@
+/*
+ * AngularJs slick notification service
+ * @author Uday Hiwarale <uhiwarale@gmail.com>
+ * https://github.com/thatisuday/ng-slick-notif
+**/
+
+#slick-notif{
+	position : fixed;
+	left : 50%;
+    overflow:hidden;
+	background-color : #fff;
+	padding : 10px 15px;
+	font-size : 14px;
+	line-height : 16px;
+    z-index:13000;
+    cursor:pointer;
+}
+
+/* Animate */
+#slick-notif.animate{
+	transition:top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+	-webkit-transition:top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+	-moz-transition:top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+	-o-transition:top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+
+/* Position */
+#slick-notif.top{
+	-webkit-box-shadow:0 3px 10px rgba(100, 100, 100, .2);
+    -moz-box-shadow:0 3px 10px rgba(100, 100, 100, .2);
+    -o-box-shadow:0 3px 10px rgba(100, 100, 100, .2);
+    box-shadow:0 3px 10px rgba(100, 100, 100, .2);
+    border-radius:0 0 5px 5px;
+}
+
+#slick-notif.bottom{
+    -webkit-box-shadow:0 -3px 10px rgba(100, 100, 100, .2);
+    -moz-box-shadow:0 -3px 10px rgba(100, 100, 100, .2);
+    -o-box-shadow:0 -3px 10px rgba(100, 100, 100, .2);
+    box-shadow:0 -3px 10px rgba(100, 100, 100, .2);
+    border-radius:5px 5px 0 0;
+}
+
+/* Types */
+#slick-notif.default.top{
+	border-bottom:2px solid #9E9E9E;
+}
+#slick-notif.default.bottom{
+	border-top:2px solid #9E9E9E;
+}
+#slick-notif.success.top{
+	border-bottom:2px solid #4CAF50;
+}
+#slick-notif.success.bottom{
+	border-top:2px solid #4CAF50;
+}
+#slick-notif.error.top{
+	border-bottom:2px solid #F44336;
+}
+#slick-notif.error.bottom{
+	border-top:2px solid #F44336;
+}
+#slick-notif.warning.top{
+	border-bottom:2px solid #FF9800;
+}
+#slick-notif.warning.bottom{
+	border-top:2px solid #FF9800;
+}
+#slick-notif.info.top{
+	border-bottom:2px solid #2196F3;
+}
+#slick-notif.info.bottom{
+	border-top:2px solid #2196F3;
+}
+
+
+/* Screen */
+#slick-notif.mobile{
+	border-radius: 100px!important;
+}
+
+
