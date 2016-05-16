@@ -1,5 +1,5 @@
 # ng-slick-notif
-AngularJs slick notification service
+AngularJs slick notification service (Pure JavaScript)
 
 ![preview](http://i.imgur.com/lwi8DDe.png)
 
@@ -14,18 +14,18 @@ bower install ng-notif
 ```
 
 ## Manual install
-Add `notif.js` and `notif.css` in head section of your page after `angular.js`
+Add `notif.js` and `notif.css` in `<head></head>` section of your page after you have included `angular.js`.
 
 ***
 
 # Getting started
-## Include module
+## Include $notif module
 Include **thatisuday.notif** module in your app.
 ```
 var myApp = angular.module('myApp', ['thatisuday.notif']);
 ```
-## Global `notif` configuration
-You can configure `notif` options before apps start running using `$notifProvider`. This will provide default options accross your app.
+## Global `$notif` configuration
+You can configure `$notif` options before apps start running using `$notifProvider`. This will provide default options accross your app.
 ```
 var myApp = angular.module('myApp', ['thatisuday.notif']).config(function($notifProvider){
 	$notifProvider.setOptions({
